@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#1C1B1F" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#FFFBFE" media="(prefers-color-scheme: light)">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Focus Timer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="app-bar">
+            <h1 class="app-bar-title">Focus Timer</h1>
+            <div class="session-indicator">
+                <span>Sessions</span>
+                <span id="sessionCount">0</span>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="mode-label">
+                <span id="modeLabel">Work</span>
+            </div>
+
+            <div class="timer-surface">
+                <div class="timer-display">
+                    <span id="minutes">25</span>:<span id="seconds">00</span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="startPauseBtn" class="btn btn-filled" aria-label="Start or pause timer">Start</button>
+                <button id="resetBtn" class="btn btn-tonal" aria-label="Reset timer">Reset</button>
+            </div>
+
+            <section class="settings-card">
+                <h2 class="settings-title">Durations</h2>
+                <div class="setting-row">
+                    <label for="workDuration" class="setting-label">Focus</label>
+                    <input type="number" id="workDuration" class="text-field" min="1" max="60" step="1" inputmode="numeric">
+                </div>
+                <div class="setting-row">
+                    <label for="shortBreakDuration" class="setting-label">Short break</label>
+                    <input type="number" id="shortBreakDuration" class="text-field" min="1" max="30" step="1" inputmode="numeric">
+                </div>
+                <div class="setting-row">
+                    <label for="longBreakDuration" class="setting-label">Long break</label>
+                    <input type="number" id="longBreakDuration" class="text-field" min="1" max="60" step="1" inputmode="numeric">
+                </div>
+                <div class="setting-row">
+                    <label for="longBreakInterval" class="setting-label">Long break every</label>
+                    <input type="number" id="longBreakInterval" class="text-field" min="2" max="10" step="1" inputmode="numeric">
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
